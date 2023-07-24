@@ -1,14 +1,22 @@
-﻿using WorkWithFabric;
+﻿using System.Text;
+using WorkWithFabric;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string sortType = args[0];
-        string inputFileName = args[1];
-        string outputFileName = args[2];
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.WriteLine("Введите тип сортировки (selection, insertion или merge):");
+        string sortType = Console.ReadLine();
+
+        Console.WriteLine("Введите имя файла с входными данными:");
+        string inputFileName = Console.ReadLine();
+
+        Console.WriteLine("Введите имя файла с выходными данными:");
+        string outputFileName = Console.ReadLine();
 
         int[] data;
+
 
         // Чтение данных из файла
         FileReader fileReader = new FileReader();
